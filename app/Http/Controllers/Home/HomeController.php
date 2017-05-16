@@ -20,9 +20,10 @@ class HomeController extends Controller
     		$data['categories'] = $this->getKategori();
     		$data['transactions'] = $this->getTransactions();
     		$data['wallets'] = $this->getWallet();
-
+			
     		$money = $data['wallets'][0]->saldo;
     		$data['money'] = number_format($money,0);
+			
     		return view('home.home',$data);
     }
 
