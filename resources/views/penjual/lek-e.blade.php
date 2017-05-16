@@ -1,8 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <?php include 'package/header.php' ?>
-	
+@extends('layouts.app2')
+
+@section ('title')
+	Home
+@endsection
+
+
+
+@section ('style')
 	 <style>
 	 body {
     display: flex;
@@ -33,11 +37,10 @@ ul {
 }
 	 .disableClick{
     pointer-events: none;
-}
-	 </style>
-  </head>
+}</style>
+@endsection
 
-  <body>
+  @section('content')
 		<div id="slideout" class="side-nav">
 			<div class="row" style="margin-top:20px; height:100px">
 				<div class="col s12 center" style="height:80px">
@@ -74,9 +77,9 @@ ul {
 		</nav>
 		
 		</div>
-  <div id="orderan" class="col s12 menu-container"><?php include 'orderan.php' ?></div>
-  <div id="antriin" class="col s12 menu-container"><?php include 'antriin.php' ?></div>
-  <div id="selesai" class="col s12 menu-container"><?php include 'selesai.php' ?></div>
+  <div id="orderan" class="col s12 menu-container">@include('penjual.Content.orderan')</div>
+  <div id="antriin" class="col s12 menu-container">@include('penjual.Content.orderan')</div>
+  <div id="selesai" class="col s12 menu-container">@include('penjual.Content.orderan')</div>
   
   <footer class="page-footer">
           <div class="container">
@@ -92,7 +95,10 @@ ul {
             </div>
           </div>
         </footer>
-    <?php include 'package/footer.php' ?>
+		@endsection
+
+		
+	@section('js')
 	<script>$(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered	
     $('.modal').modal();
@@ -105,6 +111,6 @@ ul {
     }
   );
   </script>
-  </body>
-</html>
+  @endsection
+ 
       

@@ -7,5 +7,8 @@ use App\Http\Controllers\Controller;
 
 class PklController extends Controller
 {
-    //
+		public function index()
+		{
+			return view('penjual.lek-e');
+		}
 }
