@@ -15,12 +15,7 @@ use App\TransaksiDetail;
 
 class PklController extends Controller
 {
-<<<<<<< HEAD
-		public function index()
-		{
-			return view('penjual.lek-e');
-		}
-=======
+
     public function index($id)
     {
     		$data['pkl'] = User::find($id);
@@ -132,9 +127,4 @@ class PklController extends Controller
     		$walletDetail->save();
 
     }
-
-
-
-
->>>>>>> b1043e349326d109922e5e7178a27c356e40d113
 }
