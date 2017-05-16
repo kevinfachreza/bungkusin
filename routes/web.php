@@ -27,6 +27,7 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/pkl/{id}', 'PKL\PklController@index');
 	Route::post('/pkl/{id}/confirmation', 'PKL\PklController@confirmation');
 	Route::post('/pkl/{id}/confirmation/submit', 'PKL\PklController@submit');
+	Route::get('/pkl/antrian/{id}/{transaksi}', 'PKL\PklAntrian@index');
 
 
 });

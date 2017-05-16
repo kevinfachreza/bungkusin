@@ -70,7 +70,7 @@ class PklController extends Controller
 
     		$wallet = $this->updateWallet($total);
 
-    		#return view('pkl.confirmation',$data);
+    		return redirect('pkl/antrian/'.$id.'/'.$transaksi->id);
     }
 
     private function createTransaksi($id,$total)
@@ -117,10 +117,19 @@ class PklController extends Controller
     private function updateWallet($total)
     {
     		$wallet = Wallet::where('user_id',Auth::user()->id)->first();
-    		$wallet->saldo = $wallet->saldo - $total;
+    		if($wallet->saldo - $total < 0)
+    		{
+    			$current = 0;
+    		}
+    		else
+    		{
+    			$current = $wallet->saldo - $total;
+    		}
+    		$wallet->saldo = $current;
     		$wallet->save();
 
     		$walletDetail = new walletDetail;
+    		$walletDetail->wallet_id = $wallet->id;
     		$walletDetail->nominal = $total;
     		$walletDetail->type = -1;
     		$walletDetail->status = 1;
