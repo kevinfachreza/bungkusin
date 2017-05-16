@@ -11,12 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'Home\HomeController@index');
-
 Route::get('/random/users/penjual','Random\RandomController@penjual');
+
+Route::group(['middleware' => ['auth']], function () {	
+
+	Route::get('/', 'Home\HomeController@index');
+	Route::get('/home', 'Home\HomeController@index');
+
+
+	Route::get('/kategori/{id}', 'Home\HomeController@index');
+	Route::get('/pkl/{id}', 'Home\HomeController@index');
+
+
+});
