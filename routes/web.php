@@ -15,6 +15,8 @@ Auth::routes();
 
 Route::get('/random/users/penjual','Random\RandomController@penjual');
 
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->middleware('auth');
+
 Route::group(['middleware' => ['auth']], function () {	
 
 	Route::get('/', 'Home\HomeController@index');
@@ -23,6 +25,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 	Route::get('/kategori/{id}', 'Kategori\KategoriController@index');
 	Route::get('/pkl/{id}', 'PKL\PklController@index');
+	Route::post('/pkl/{id}/confirmation', 'PKL\PklController@confirmation');
+	Route::post('/pkl/{id}/confirmation/submit', 'PKL\PklController@submit');
 
 
 });

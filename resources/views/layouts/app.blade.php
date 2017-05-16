@@ -9,8 +9,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="static/css/custom2.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('static/css/materialize.min.css')}}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('static/css/custom2.css')}}"  media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@yield('title')</title>
 </head>
@@ -22,8 +22,8 @@
 </div>
 
 <!-- Scripts -->
-<script type="text/javascript" src="static/js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="static/js/materialize.min.js"></script>
+<script type="text/javascript" src="{{asset('static/js/jquery-2.1.1.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('static/js/materialize.min.js')}}"></script>
 @yield('js')
 </body>
 </html>
