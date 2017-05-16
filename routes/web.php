@@ -21,8 +21,8 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/home', 'Home\HomeController@index');
 
 
-	Route::get('/kategori/{id}', 'Home\HomeController@index');
-	Route::get('/pkl/{id}', 'Home\HomeController@index');
+	Route::get('/kategori/{id}', 'Kategori\KategoriController@index');
+	Route::get('/pkl/{id}', 'PKL\PklController@index');
 
 
 });
