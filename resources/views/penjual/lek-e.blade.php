@@ -64,9 +64,9 @@ ul {
 		@endsection
 		
   @section('content')
-  <div id="orderan" class="col s12 menu-container">@include('penjual.Content.orderan')</div>
-  <div id="antriin" class="col s12 menu-container">@include('penjual.Content.antriin')</div>
-  <div id="selesai" class="col s12 menu-container">@include('penjual.Content.selesai')</div>
+  <div id="orderan" class="col s12 menu-container">@include('penjual.Content.orderan', ['order' => $orderan])</div>
+  <div id="antriin" class="col s12 menu-container">@include('penjual.Content.antriin', ['antri' => $antri])</div>
+  <div id="selesai" class="col s12 menu-container">@include('penjual.Content.selesai', ['siap' => $siap])</div>
   
   <footer class="page-footer">
           <div class="container">

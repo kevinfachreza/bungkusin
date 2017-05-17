@@ -14,7 +14,11 @@ use Auth;
 class HomeController extends Controller
 {
     public function index()
-    {
+    {       
+        if (Auth::user()->penjual == 1) {
+                return redirect('/penjual/'.Auth::user()->id);
+            }
+         
     		$data['slides'] = $this->getSlides();
     		$data['favorites'] = $this->getFavorites();
     		$data['categories'] = $this->getKategori();
