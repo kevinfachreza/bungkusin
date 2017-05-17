@@ -19,7 +19,7 @@
 			</div>
 			<div class="modal-footer">
 			  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Belum</a>
-			  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Iya</a>
+			  <a href="{{url('penjual/ambil')}}/{{ $orderan->id }}" class="modal-action modal-close waves-effect waves-green btn-flat">Iya</a>
 			</div>
 		</div>
 		
