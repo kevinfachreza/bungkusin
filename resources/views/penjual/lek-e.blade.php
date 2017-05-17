@@ -89,6 +89,7 @@ ul {
 	<script>$(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered	
     $('.modal').modal();
+	
   });
     $('.button-collapse').sideNav({
       menuWidth: 250, // Default is 300
@@ -97,6 +98,8 @@ ul {
       draggable: true // Choose whether you can drag to open on touch screens
     }
   );
+	
+  
   </script>
   @endsection
  

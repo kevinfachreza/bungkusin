@@ -6,25 +6,26 @@
   <div class="col s12" style="margin-top:10px;">
 	<div class="collection">
 		@foreach($order as $orderan)
-        <a href="#modal1" class="collection-item">
+        <a href="#modal{{ $orderan->id }}" class="collection-item" >
 			<p>{{$orderan->name}}</p> 
 			@foreach($orderan->pesan as $item)
 			<p>{{$item->nama}} x {{$item->jumlah}} </p>
 			@endforeach
 			<p>{{$orderan->total_harga}}</p>
 		</a>
-		@endforeach
-    </div>
-  </div>
-	<div id="modal1" class="modal">
+		<div id="modal{{ $orderan->id }}" class="modal">
     <div class="modal-content">
-      <p>Apakah anda bersedia menerima pesanan ini?</p>
+      <p>Apakah anda bersedia menerima pesanan {{ $orderan->id }} ini?</p>
     </div>
     <div class="modal-footer">
 	  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Tidak</a>
       <a href="#!" class="modal-action modal-close waves-effect waves-blue btn-flat">Iya</a>
     </div>
   </div>
+		@endforeach
+    </div>
+  </div>
+	
 	   </div>
     </div>
 	
