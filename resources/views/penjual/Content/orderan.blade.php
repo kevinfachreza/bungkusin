@@ -5,13 +5,16 @@
   </div>
   <div class="col s12" style="margin-top:10px;">
 	<div class="collection">
+
 		@foreach($order as $orderan)
         <a href="#modal{{ $orderan->id }}" class="collection-item" >
+			
 			<p>{{$orderan->name}}</p> 
 			@foreach($orderan->pesan as $item)
 			<p>{{$item->nama}} x {{$item->jumlah}} </p>
 			@endforeach
 			<p>{{$orderan->total_harga}}</p>
+			
 		</a>
 	<div id="modal{{ $orderan->id }}" class="modal">
     <div class="modal-content">
@@ -22,7 +25,9 @@
       <a href="{{url('penjual/ordersiap')}}/{{ $orderan->id }}" class="modal-action modal-close waves-effect waves-blue btn-flat">Iya</a>
     </div>
   </div>
+  
 		@endforeach
+	
     </div>
   </div>
 	
