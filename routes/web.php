@@ -24,10 +24,19 @@ Route::group(['middleware' => ['auth']], function () {
 
 
 	Route::get('/kategori/{id}', 'Kategori\KategoriController@index');
+
+
 	Route::get('/pkl/{id}', 'PKL\PklController@index');
 	Route::post('/pkl/{id}/confirmation', 'PKL\PklController@confirmation');
 	Route::post('/pkl/{id}/confirmation/submit', 'PKL\PklController@submit');
 	Route::get('/pkl/antrian/{id}/{transaksi}', 'PKL\PklAntrian@index');
 
+
+
+	Route::get('/wallet/topup/voucher', 'Wallet\Voucher@index');
+	Route::post('/wallet/topup/voucher', 'Wallet\Voucher@submit');
+
+	Route::get('/wallet/topup/transfer', 'Wallet\Transfer@index');
+	Route::post('/wallet/topup/transfer', 'Wallet\Transfer@submit');
 
 });

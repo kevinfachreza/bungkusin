@@ -25,5 +25,9 @@
 <script type="text/javascript" src="{{asset('static/js/jquery-2.1.1.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('static/js/materialize.min.js')}}"></script>
 @yield('js')
+
+<script type="text/javascript">
+    Materialize.toast("{{ session('status') }}", 4000);
+</script>
 </body>
 </html>
