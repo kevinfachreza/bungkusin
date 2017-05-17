@@ -9,7 +9,7 @@
       @foreach($antri as $orderan)
         <a href="#modal2" class="collection-item">
       <p>{{$orderan->name}}</p> 
-      @foreach($orderan->pesan as $item)
+      @foreach($orderan->pesan1 as $item)
       <p>{{$item->nama}} x {{$item->jumlah}} </p>
       @endforeach
       <p>{{$orderan->total_harga}}</p>

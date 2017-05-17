@@ -31,16 +31,16 @@ class PenjualController extends Controller
 		$query2 = DB::select($query2);
 		foreach ($query2 as $item) {
 			$query = "SELECT * from transaksi_detail trd, menu_makanan m where trd.transaksi =".$order->id." and m.id = trd.menu";
-			$order->pesan =  DB::select($query);
+			$item->pesan1 =  DB::select($query);
 			array_push($antri, $item);
 		}
-		print_r($antri);
+		
 
 		$query3 = "SELECT tr.id, u.name,  tr.id, tr.total_harga  from transaksi tr, users u where tr.pembeli = u.id and tr.status = 2 and tr.penjual = ".$id."";
 		$query3 = DB::select($query3);
 		foreach ($query3 as $item2) {
 			$query = "SELECT * from transaksi_detail trd, menu_makanan m where trd.transaksi =".$order->id." and m.id = trd.menu";
-			$order->pesan =  DB::select($query);
+			$item2->pesan2 =  DB::select($query);
 			array_push($siap, $item2);
 		}
 		//foreach ($transaksi as $tmp)
@@ -79,11 +79,13 @@ class PenjualController extends Controller
 	public function ordersiap($id)
 	{
 		
-		echo $id;
+		//echo $id;
 		DB::table('transaksi')
             ->where('id', $id)
             ->update(['status' => 1]);
+		$lupa = DB::table('transaksi')->where('id',$id)->first();
 		
+		return $this->index($lupa->penjual);
 	}
 	
 }
