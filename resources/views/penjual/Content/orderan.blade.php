@@ -5,23 +5,16 @@
   </div>
   <div class="col s12" style="margin-top:10px;">
 	<div class="collection">
+		@foreach($order as $orderan)
         <a href="#modal1" class="collection-item">
-			<p>Bu Narsih </p> 
-			<p>Nasi Goreng x 1 </p>
-			<p>Rp10.000,00 </p>
+			<p>{{$orderan->name}}</p> 
+			@foreach($orderan->pesan as $item)
+			<p>{{$item->nama}} x {{$item->jumlah}} </p>
+			@endforeach
+			<p>{{$orderan->total_harga}}</p>
 		</a>
-        <a href="#modal1" class="collection-item">
-			<p>Pak Harmut </p>
-			<p>Mi Goreng x 2 </p>
-			<p>Rp 20.000,00</p>
-		</a>
-        <a href="#modal1" class="collection-item">
-			<p>Mama Roma Kelapa </p>
-			<p>Nasi Goreng x 1 </p>
-			<p>Mi Goreng x 1 </p>
-			<p>Rp 20.000,00</p>
-		</a>
-      </div>
+		@endforeach
+    </div>
   </div>
 	<div id="modal1" class="modal">
     <div class="modal-content">

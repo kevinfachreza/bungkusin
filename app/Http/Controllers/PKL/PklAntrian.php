@@ -19,9 +19,9 @@ class PklAntrian extends Controller
     			])
     		->get();
 
+
     		$data['antrian'] = count($antrian);
     		$data['transaksi'] = Transaksi::find($transaksi);
-
     		return view('pkl.antri',$data);
     }
 }

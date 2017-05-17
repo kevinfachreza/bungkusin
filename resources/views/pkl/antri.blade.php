@@ -19,9 +19,7 @@ Home
 
   	<div class="col s12 center" style="margin-top: 20px">
   		<button id="refresh" class="waves-effect waves-light btn red darken-1"><i class="material-icons left">refresh</i>Refresh</a>
-  	</div>
-
-  	@if($transaksi->status == 0)
+  	</div>  	@if($transaksi->status == 0)
   		@if($transaksi->accepted_at == NULL)
   			<h5 class="center" style="margin-top: 50px">Menunggu konfirmasi<br>dari penjual</h5>
   		@else

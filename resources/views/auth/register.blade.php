@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col s12" align="center" style="margin-top:80px">
-                <a href="register.php" class="white-text"> <h4 class="thin"> Sign Up </h4> </a>
+                <a href="{{url('register')}}" class="white-text"> <h4 class="thin"> Sign Up </h4> </a>
             </div>
 
             <div class="col s12">
@@ -50,7 +50,7 @@
           <div class="row">
             <div class="col s12 center white-text" style="margin-top: 80px">
                 <h6>Sudah punya akun? </h6>
-                <a href="login.php" class="white-text"> <h4 class="thin"> Log In </h4> </a>
+                <a href="{{url('login')}}" class="white-text"> <h4 class="thin"> Log In </h4> </a>
             </div>
         </div>
     </div>
