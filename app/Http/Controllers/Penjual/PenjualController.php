@@ -87,5 +87,16 @@ class PenjualController extends Controller
 		
 		return $this->index($lupa->penjual);
 	}
+	public function selesai($id)
+	{
+		
+		//echo $id;
+		DB::table('transaksi')
+            ->where('id', $id)
+            ->update(['status' => 2]);
+		$lupa = DB::table('transaksi')->where('id',$id)->first();
+		
+		return $this->index($lupa->penjual);
+	}
 	
 }

@@ -25,7 +25,7 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/penjual/{id}', 'Penjual\PenjualController@index');
 	Route::get('/penjual/wallet/{id}','Penjual\PenjualController@wallet');
 	Route::get('/penjual/ordersiap/{id}','Penjual\PenjualController@ordersiap');
-	
+	Route::get('/penjual/orderselesai/{id}','Penjual\PenjualController@selesai');
 	
 	Route::get('/kategori/{id}', 'Kategori\KategoriController@index');
 

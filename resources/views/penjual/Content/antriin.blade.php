@@ -14,17 +14,19 @@
       @endforeach
       <p>{{$orderan->total_harga}}</p>
     </a>
-    @endforeach
-      </div>
-  </div>
 	<div id="modal2" class="modal">
     <div class="modal-content">
       <p>Apakah pesanan sudah siap?</p>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Belum</a>
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sudah</a>
+      <a href="{{url('penjual/orderselesai')}}/{{ $orderan->id }}" class="modal-action modal-close waves-effect waves-green btn-flat">Sudah</a>
     </div>
   </div>
+	
+    @endforeach
+      </div>
+  </div>
+	
 	   </div>
     </div>
