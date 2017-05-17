@@ -43,7 +43,7 @@ ul {
   @section('navbar')
 		<div class="navbar-fixed nav-extended">
 		<nav  class='red darken-2 nav-extended'>
-		<div class="nav-wrapper" style="margin-left:3px; margin-right:5px">
+		<div class="nav-wrapper" style="margin-left:10px; margin-right:5px">
 			<a href="#" class="brand-logo left button-collapse">{{$nama->name}}</a>
 			<a href="#" class="brand-logo hide-on-med-and-down">{{$nama->name}}</a>
 			<ul class="right valign-wrapper">

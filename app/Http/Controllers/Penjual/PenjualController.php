@@ -72,8 +72,58 @@ class PenjualController extends Controller
 	}
 	public function wallet($id)
 	{
-		echo $id;
-		return view('penjual.temp');
+		//echo $id;
+		$data['isi'] = DB::table('wallet')->where('user_id',$id)->first();
+		$data['isi']->saldo = $this->buatrp($data['isi']->saldo);
+		$data['log'] = DB::table('log_mutasi')->where('id_penjual',$id)->orderBy('Tanggal', 'desc')->get();
+		foreach ($data['log'] as $tmp)
+		{
+			$tmp->Nilai = $this->buatrp($tmp->Nilai);
+			$tmp->Tanggal = $this->buattgl($tmp->Tanggal);
+		//	print_r ($tmp->Nilai);
+			
+		}
+		//print_r ($data['isi']->saldo);
+		return view('penjual.temp',$data);
+		
+	}
+	function buattgl($tanggal)
+	{
+		$hari = array ( 1 =>    'Senin',
+					'Selasa',
+					'Rabu',
+					'Kamis',
+					'Jumat',
+					'Sabtu',
+					'Minggu'
+				);
+				
+		$bulan = array (1 =>   'Januari',
+					'Februari',
+					'Maret',
+					'April',
+					'Mei',
+					'Juni',
+					'Juli',
+					'Agustus',
+					'September',
+					'Oktober',
+					'November',
+					'Desember'
+				);
+		$split 	  = explode('-', $tanggal);
+		$tgl_indo = $split[2] . ' ' . $bulan[ (int)$split[1] ] . ' ' . $split[0];
+		$num = date('N', strtotime($tanggal));
+		return $hari[$num] . ', ' . $tgl_indo;
+	
+	}
+	
+	
+	
+	public function buatrp($angka)
+	{
+		$jadi = "Rp " . number_format($angka,2,',','.');
+		return $jadi;
 		
 	}
 	public function ordersiap($id)

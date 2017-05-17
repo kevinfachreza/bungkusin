@@ -1,6 +1,8 @@
+
 <div class="center white  border" style="padding: 20px 0px; margin-top: 50px">
 	<h6> Uang Anda Saat Ini </h6>
-	<h4 id="money-amount"> Rp 50.000 </h4>
+
+	<h4 id="money-amount"> {{$isi->saldo}} </h4>
 	<div style="margin-top:5px"><a class="waves-effect waves-light btn red" href="#modal1"  onclick="setzero()"> Cairkan </a></div>
 </div>
 <div class="collection pesanan">
@@ -19,30 +21,16 @@
 			</div>
 		</div>
 	</a>
+	@foreach($log as $tmp)
 	<a href="#!" class="collection-item">
   		<div class="row" style="margin:0;">
 			<div class="col s10">
-		  		Penjualan <strong>12.000</strong>  <br>
-		  		Senin, 10 April 2017 <br>
+			{{$tmp->Tipe}}: <strong> {{$tmp->Nilai}}</strong>  <br>
+		  		{{$tmp->Tanggal}}<br>
 			</div>
 		</div>
 	</a>
-	<a href="#!" class="collection-item">
-  		<div class="row" style="margin:0;">
-			<div class="col s10">
-		  		Penjualan <strong>12.000</strong>  <br>
-		  		Senin, 10 April 2017 <br>
-			</div>
-		</div>
-	</a>
-	<a href="#!" class="collection-item">
-  		<div class="row" style="margin:0;">
-			<div class="col s10">
-		  		Penjualan <strong>12.000</strong>  <br>
-		  		Senin, 10 April 2017 <br>
-			</div>
-		</div>
-	</a>
+	@endforeach
 </div>
             
 <div id="modal1" class="modal">
