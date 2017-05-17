@@ -19,8 +19,9 @@ class PenjualController extends Controller
 			//{
 				//echo ($tmp->id);
 			//}
-		
+			
 			$data['nama'] = $this->getName($id); 
+			$data['orderan'] = $transaksi;
 			
     		return view('penjual.lek-e',$data);
     }
