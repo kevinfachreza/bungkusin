@@ -13,13 +13,13 @@
 			@endforeach
 			<p>{{$orderan->total_harga}}</p>
 		</a>
-		<div id="modal{{ $orderan->id }}" class="modal">
+	<div id="modal{{ $orderan->id }}" class="modal">
     <div class="modal-content">
-      <p>Apakah anda bersedia menerima pesanan {{ $orderan->id }} ini?</p>
+      <p>Apakah anda bersedia menerima pesanan ini?</p>
     </div>
     <div class="modal-footer">
-	  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Tidak</a>
-      <a href="#!" class="modal-action modal-close waves-effect waves-blue btn-flat">Iya</a>
+	  <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Tidak</a>
+      <a href="{{url('penjual/wallet/')}}/{{ $orderan->id }}" class="modal-action modal-close waves-effect waves-blue btn-flat">Iya</a>
     </div>
   </div>
 		@endforeach

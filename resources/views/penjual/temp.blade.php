@@ -29,7 +29,7 @@
 	@endsection	
 		
 	@section('content')
-  <div id="LekWallet" class="col s12 menu-container">@include('penjual.Content.orderan', ['order' => $orderan])</div>
+  <div id="LekWallet" class="col s12 menu-container">@include('penjual.dompetlek')</div>
   
   <footer class="page-footer">
           <div class="container">

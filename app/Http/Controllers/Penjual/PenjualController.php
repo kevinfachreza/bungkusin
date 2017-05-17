@@ -53,12 +53,12 @@ class PenjualController extends Controller
 		return view('penjual.lek-e',$data);
     }
 	
-	private function getName($id)
+	public function getName($id)
 	{
 		$nama = User::find($id);
     	return $nama;
 	}
-	private function getOrderan()
+	public function getOrderan()
 	{
 		$antrian = Transaksi::where([
     			['status',0],
@@ -68,5 +68,10 @@ class PenjualController extends Controller
     			])
     		->get();
 	}
-
+	public function wallet($id)
+	{
+		echo $id;
+		return view('penjual.temp');
+		
+	}
 }
