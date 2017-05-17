@@ -9,21 +9,11 @@
 		<div class="navbar-fixed nav-extended">
 		<nav  class='red darken-2 nav-extended'>
 		<div class="nav-wrapper" style="margin-left:3px; margin-right:5px">
-			<a href="#" data-activates="slideout" class="brand-logo left button-collapse"><i class="material-icons">menu</i>Lik Zentrum
-		<ul class="right valign-wrapper">
-        <li class="hide-on-med-and-down">Saldo : 50.000 Gope  </li>
-		<li><a class='dropdown-button' href='#' data-gutter="5" data-constrainWidth="true" data-beloworigin="true"><i class="material-icons">credit_card</i></a></li>
-		
-		
-		</ul>
+      <div class="left brand-logo">
+          <a href="{{ url()->previous() }}"><i class="material-icons">arrow_back</i> </a>{{$nama->name}}        
+      </div>
 		</div>
 		
-		<div class="nav-content">
-				<ul class="tabs tabs-transparent">
-					<li class="tab"><a href="#LekWallet">Wallet</a></li>
-				</ul>
-			</div>
-		</nav>
 		
 		</div>
 	@endsection	

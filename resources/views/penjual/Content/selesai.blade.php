@@ -6,14 +6,14 @@
   <div class="col s12" style="margin-top:10px;">
 	<div class="collection">
 		@foreach($siap as $orderan)
-        <a href="#modal3" class="collection-item">
+        <a href="#modal{{ $orderan->id }}" class="collection-item">
 			<p>{{$orderan->name}}</p> 
 			@foreach($orderan->pesan2 as $item)
 			<p>{{$item->nama}} x {{$item->jumlah}} </p>
 			@endforeach
 			<p>{{$orderan->total_harga}}</p>
 		</a>
-		<div id="modal3" class="modal">
+		<div id="modal{{ $orderan->id }}" class="modal">
 			<div class="modal-content">
 			  <p>Apakah pesanan sudah diambil?</p>
 			</div>

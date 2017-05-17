@@ -1,9 +1,7 @@
-
-<div class="center white  border" style="padding: 20px 0px;">
+<div class="center white  border" style="padding: 20px 0px; margin-top: 50px">
 	<h6> Uang Anda Saat Ini  </h6>
-
-	<h4 id="money-amount"> {{$isi->saldo}} </h4>
-	<div style="margin-top:5px"><a class="waves-effect waves-light btn red" href="{{url('penjual/abisin')}}/{{$id}}"> Cairkan </a></div>
+	<h4 id="money-amount"> {{$wallet['isi']->saldo}} </h4>
+	<div style="margin-top:5px"><a class="waves-effect waves-light btn red" href="{{url('penjual/abisin')}}/{{$wallet['id']}}"> Cairkan </a></div>
 </div>
 <div class="collection pesanan">
 	<div class="collection-item">
@@ -13,7 +11,7 @@
 			</div>
 		</div>
 	</div>
-	@foreach($log as $tmp)
+	@foreach($wallet['log'] as $tmp)
 	<a href="#!" class="collection-item">
   		<div class="row" style="margin:0;">
 			<div class="col s10">

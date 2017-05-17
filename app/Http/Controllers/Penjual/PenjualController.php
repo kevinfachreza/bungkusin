@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Penjual;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use App\User;
 use App\Transaksi;
 use App\TransaksiDetail;
@@ -72,12 +73,13 @@ class PenjualController extends Controller
 	}
 	public function wallet($id)
 	{
+		$wallet['nama'] = $this->getName($id); 
 		//echo $id;
-		$data['isi'] = DB::table('wallet')->where('user_id',$id)->first();
-		$data['isi']->saldo = $this->buatrp($data['isi']->saldo);
-		$data['log'] = DB::table('log_mutasi')->where('id_penjual',$id)->orderBy('Tanggal', 'desc')->orderBy('Waktu','desc')->get();
-		$data['id']= $id;
-		foreach ($data['log'] as $tmp)
+		$wallet['isi'] = DB::table('wallet')->where('user_id',$id)->first();
+		$wallet['isi']->saldo = $this->buatrp($wallet['isi']->saldo);
+		$wallet['log'] = DB::table('log_mutasi')->where('id_penjual',$id)->orderBy('Tanggal', 'desc')->get();
+		$wallet['id']= $id;
+		foreach ($wallet['log'] as $tmp)
 		{
 			$tmp->Nilai = $this->buatrp($tmp->Nilai);
 			$tmp->Tanggal = $this->buattgl($tmp->Tanggal);
@@ -85,7 +87,7 @@ class PenjualController extends Controller
 			
 		}
 		//print_r ($data['isi']->saldo);
-		return view('penjual.temp',$data);
+		return view('penjual.temp',$wallet);
 	}
 	public function abis($id)
 	{
@@ -99,8 +101,7 @@ class PenjualController extends Controller
 				[
 					'Tipe' => 'Dana Cair',
 					'Nilai' => $isi,
-					'Tanggal' => date("Y-m-d"),
-					'Waktu' => date("h:i:s"),
+					'Tanggal' => Carbon::now()->toDateTimeString(),
 					'id_penjual' => $id
 				]
 		);
@@ -181,8 +182,7 @@ class PenjualController extends Controller
 				[
 					'Tipe' => 'Penjualan',
 					'Nilai' => $totalharga,
-					'Tanggal' => date("Y-m-d"),
-					'Waktu' => date("h:i:s"),
+					'Tanggal' => Carbon::now()->toDateTimeString(),
 					'id_penjual' => $lupa->penjual
 				]
 		);
