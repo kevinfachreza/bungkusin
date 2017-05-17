@@ -13,5 +13,12 @@ class Transaksi extends Model
 	{
 		return $this->hasOne('App\User','id','penjual');
 	}
+	
+	public function detail()
+	{
+		return $this->hasMany('App\TransaksiDetail');
+	}
 
+	
+	
 }

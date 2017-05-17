@@ -40,28 +40,12 @@ ul {
 }</style>
 @endsection
 
-  @section('content')
-		<div id="slideout" class="side-nav">
-			<div class="row" style="margin-top:20px; height:100px">
-				<div class="col s12 center" style="height:80px">
-					<a onclick="$('.button-collapse').sideNav('hide');" style="height:84px"><i class="large material-icons">reorder</i></a>
-				</div>
-			</div>
-			<div class="row" style="margin-top:60px">
-			<ul>
-				<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-				<li><a href="#!">Second Link</a></li>
-				<li><div class="divider"></div></li>
-				<li><a class="subheader">Subheader</a></li>
-				<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-			</ul>
-			</div>
-		</div>
+  @section('navbar')
 		<div class="navbar-fixed nav-extended">
 		<nav  class='red darken-2 nav-extended'>
 		<div class="nav-wrapper" style="margin-left:3px; margin-right:5px">
-			<a href="#" class="brand-logo left button-collapse">Lik Zentrum</a>
-			<a href="#" class="brand-logo hide-on-med-and-down">Lik Zentrum</a>
+			<a href="#" class="brand-logo left button-collapse">{{$nama->name}}</a>
+			<a href="#" class="brand-logo hide-on-med-and-down">{{$nama->name}}</a>
 			<ul class="right valign-wrapper">
 			<li><a href='temp.php' data-gutter="5" data-constrainWidth="true" data-beloworigin="true"><i class="material-icons">credit_card</i></a></li>
 			</ul>
@@ -77,9 +61,12 @@ ul {
 		</nav>
 		
 		</div>
+		@endsection
+		
+  @section('content')
   <div id="orderan" class="col s12 menu-container">@include('penjual.Content.orderan')</div>
-  <div id="antriin" class="col s12 menu-container">@include('penjual.Content.orderan')</div>
-  <div id="selesai" class="col s12 menu-container">@include('penjual.Content.orderan')</div>
+  <div id="antriin" class="col s12 menu-container">@include('penjual.Content.antriin')</div>
+  <div id="selesai" class="col s12 menu-container">@include('penjual.Content.selesai')</div>
   
   <footer class="page-footer">
           <div class="container">
