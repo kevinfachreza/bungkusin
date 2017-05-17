@@ -19,7 +19,7 @@
     </div>
     <div class="modal-footer">
 	  <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Tidak</a>
-      <a href="{{url('penjual/wallet/')}}/{{ $orderan->id }}" class="modal-action modal-close waves-effect waves-blue btn-flat">Iya</a>
+      <a href="{{url('penjual/ordersiap')}}/{{ $orderan->id }}" class="modal-action modal-close waves-effect waves-blue btn-flat">Iya</a>
     </div>
   </div>
 		@endforeach
