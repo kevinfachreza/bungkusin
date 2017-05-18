@@ -10,7 +10,7 @@
 		<nav  class='red darken-2 nav-extended'>
 		<div class="nav-wrapper" style="margin-left:3px; margin-right:5px">
       <div class="left brand-logo">
-          <a href="{{ url()->previous() }}"><i class="material-icons">arrow_back</i> </a>{{$nama->name}}        
+          <a href="{{url('penjual')}}/{{ $nama->id }}"><i class="material-icons">arrow_back</i> </a>{{$nama->name}}        
       </div>
 		</div>
 		
