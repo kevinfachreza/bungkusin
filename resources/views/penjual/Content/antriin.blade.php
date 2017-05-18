@@ -2,7 +2,7 @@
 <div class="container"  style="margin-top:50px;margin-bottom:30px;weight:100vh">
   <div class="row">
   <div class="col s12" style=margin-top:4px>
-   <h3 style="font-weight:200">Antri</h3>
+   <h3 style="font-weight:200">Antrian</h3>
   </div>
   <div class="col s12" style="margin-top:10px;">
 	<div class="collection">
@@ -12,7 +12,7 @@
       @foreach($order->pesan1 as $item)
       <p>{{$item->nama}} x {{$item->jumlah}} </p>
       @endforeach
-      <p>{{$order->total_harga}}</p>
+      <p>Rp. {{number_format($order->total_harga,0)}}</p>
     </a>
 	<div id="modal{{ $order->id }}" class="modal">
     <div class="modal-content">

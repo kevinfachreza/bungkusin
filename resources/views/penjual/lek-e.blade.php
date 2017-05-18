@@ -52,8 +52,8 @@ ul {
 		
 		<div class="nav-content">
 				<ul class="tabs tabs-transparent">
-					<li class="tab"><a href="#orderan">Orderan</a></li>
-					<li class="tab"><a href="#antriin">Lagi Diantriin</a></li>
+					<li class="tab"><a href="#orderan">Pesanan</a></li>
+					<li class="tab"><a href="#antriin">Antrian</a></li>
 					<li class="tab"><a href="#selesai">Selesai</a></li>
 				</ul>
 			</div>

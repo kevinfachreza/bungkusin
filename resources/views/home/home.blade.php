@@ -21,10 +21,10 @@
 					<li class="tab col s3"><a class="white-text" id="nav-home" href="#home">
 						<i class="material-icons">home</i>
 					</a></li>
-					<li class="tab col s3"><a class="white-text" id="nav-search" href="#search">
+<!-- 					<li class="tab col s3"><a class="white-text" id="nav-search" href="#search">
 						<i class="material-icons">search</i>
 					</a></li>
-					<li class="tab col s3"><a class="white-text" id="nav-order" href="#myorder">
+ -->					<li class="tab col s3"><a class="white-text" id="nav-order" href="#myorder">
 						<i class="material-icons">local_dining</i>
 					</a></li>
 					<li class="tab col s3"><a class="white-text" id="nav-wallet" href="#wallet">
@@ -41,8 +41,8 @@
 	</nav>
 
 	<div id="home" class="col s12 menu-container grey lighten-4" >@include('home.content.home')</div>
-	<div id="search" class="col s12 menu-container grey lighten-4"  >@include('home.content.search')</div>
-	<div id="myorder" class="col s12 menu-container">@include('home.content.order')</div>
+	<!-- <div id="search" class="col s12 menu-container grey lighten-4"  >@include('home.content.search')</div>
+	 --><div id="myorder" class="col s12 menu-container">@include('home.content.order')</div>
 	<div id="wallet" class="col s12 menu-container grey lighten-4">@include('home.content.wallet')</div>
 @endsection
 

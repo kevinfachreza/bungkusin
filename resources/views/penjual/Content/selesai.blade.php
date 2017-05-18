@@ -11,7 +11,7 @@
 			@foreach($orderan->pesan2 as $item)
 			<p>{{$item->nama}} x {{$item->jumlah}} </p>
 			@endforeach
-			<p>{{$orderan->total_harga}}</p>
+			<p>Rp. {{number_format($orderan->total_harga,0)}}</p>
 		</a>
 		<div id="modal{{ $orderan->id }}" class="modal">
 			<div class="modal-content">

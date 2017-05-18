@@ -82,7 +82,7 @@ class PenjualController extends Controller
 		foreach ($wallet['log'] as $tmp)
 		{
 			$tmp->Nilai = $this->buatrp($tmp->Nilai);
-			$tmp->Tanggal = $this->buattgl($tmp->Tanggal);
+		//	$tmp->Tanggal = $this->buattgl($tmp->Tanggal);
 		//	print_r ($tmp->Nilai);
 			
 		}

@@ -18,7 +18,7 @@
   		<div class="row" style="margin:0;">
 			<div class="col s10">
 			{{$tmp->Tipe}}: <strong> {{$tmp->Nilai}}</strong>  <br>
-		  		{{$tmp->Tanggal}}<br>
+		  		{{date('l, d F, H:i', strtotime($tmp->Tanggal))}}<br>
 			</div>
 		</div>
 	</a>
