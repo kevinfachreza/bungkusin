@@ -20,7 +20,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->middl
 Route::group(['middleware' => ['auth']], function () {	
 
 	Route::get('/', 'Home\HomeController@index');
-	Route::get('/home', 'Home\HomeController@index'	);
+	Route::get('/home/{tab_active?}', 'Home\HomeController@index'	);
 	
 	Route::get('/penjual/{id}', 'Penjual\PenjualController@index');
 	Route::get('/penjual/wallet/{id}','Penjual\PenjualController@wallet');
@@ -45,5 +45,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 	Route::get('/wallet/topup/transfer', 'Wallet\Transfer@index');
 	Route::post('/wallet/topup/transfer', 'Wallet\Transfer@submit');
+
+
+	Route::get('/api/penjual/search', 'Penjual\Search@index');
 
 });

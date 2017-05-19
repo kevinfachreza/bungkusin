@@ -24,7 +24,7 @@
 				@if($transaction->status == 2) <i class="small material-icons">check</i> @endif
 				@if($transaction->status == 1) <i class="small material-icons">room_service</i> @endif
 				@if($transaction->status == 0) <i class="small material-icons">timer</i> @endif
-				@if($transaction->status == -1) <i class="small material-icons">remove</i> @endif
+				@if($transaction->status == -1) <i class="small material-icons">clear</i> @endif
 
 			</div>
 		</div>

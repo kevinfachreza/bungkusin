@@ -1,6 +1,6 @@
 <div class="carousel carousel-slider" data-indicators="true" style="margin-bottom: 20px">
 	@foreach($slides as $slide)
-	<a class="carousel-item" href="{{url($slide->link)}}"><img src="{{$slide->img}}"></a>
+	<a class="carousel-item" href="{{url($slide->link)}}"><img src="{{asset($slide->img)}}"></a>
 	@endforeach
 </div>
 
@@ -41,7 +41,7 @@
 		<a href="{{url('kategori')}}/{{$category->id}}">
 			<div class="col s4 menu-makanan-item">
 				<div class="img-cover">
-					<img class="object-fit-cover" src="{{$category->img}}" height="75px">
+					<img class="object-fit-cover" src="{{asset($category->img)}}" height="75px">
 				</div>
 				<h6 style="padding:3px 5px"> {{$category->nama}}</h6>
 			</div>
