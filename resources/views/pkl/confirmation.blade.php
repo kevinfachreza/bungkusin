@@ -39,7 +39,7 @@ Home
 			<li class="collection-item"><div>Saldo Anda<span class="secondary-content">Rp {{number_format($wallets[0]->saldo)}}</span></div></li>
 
 
-			@if($wallets[0]->saldo - $total)
+			@if($wallets[0]->saldo - $total < 0)
 			<li class="collection-item grey lighten-4"><div><strong>Pembayaran Cash</strong><span class="secondary-content black-text"><strong>Rp {{number_format(($wallets[0]->saldo - $total)*-1)}}</strong></span></div></li>
 			
 			<li class="collection-item grey lighten-4"><div><strong>Sisa Saldo</strong><span class="secondary-content black-text"><strong>Rp 0</strong></span></div></li>

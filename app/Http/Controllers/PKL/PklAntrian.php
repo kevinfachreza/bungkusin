@@ -12,13 +12,11 @@ class PklAntrian extends Controller
     public function index($id,$transaksi)
     {
     		$antrian = Transaksi::where([
-    			['status',0],
-    			['accepted_at','<>',NULL],
+    			['status',1],
     			['penjual',$id],
-    			['id','<',$transaksi]
+    			['id','<=',$transaksi]
     			])
     		->get();
-
 
     		$data['antrian'] = count($antrian);
     		$data['transaksi'] = Transaksi::find($transaksi);
